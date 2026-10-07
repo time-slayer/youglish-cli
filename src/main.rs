@@ -5,5 +5,5 @@ fn main() {
     let phrase = arguments[1..].join("_");
 
     let url = format!("https://youglish.com/pronounce/{}/english", phrase);
-    open::that(url);
+    open::that(url).unwrap();
 }
