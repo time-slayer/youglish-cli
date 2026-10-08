@@ -7,7 +7,7 @@ struct Cli {
     /// Word or phrase to pronounce
     phrase: Vec<String>,
 
-    /// Specify accent to pronounce
+    /// Filter by a specific accent
     #[arg(short, long)]
     accent: Option<Accent>,
 
