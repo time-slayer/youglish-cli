@@ -1,23 +1,15 @@
-use std::env;
-use std::process;
+use clap::Parser;
 
-fn main() {
-    let arguments: Vec<String> = env::args().collect();
-    if arguments.len() < 2 {
-        usage();
-        process::exit(1);
-    }
-
-    let phrase = arguments[1..].join("_");
-    let url = format!("https://youglish.com/pronounce/{}/english", phrase);
-    open::that(url).unwrap();
+#[derive(Parser)]
+struct Cli {
+    /// Word or phrase to pronounce
+    phrase: Vec<String>,
 }
 
-fn usage() {
-    println!(
-        "\
-Usage: yg <phrase>
+fn main() {
+    let cli = Cli::parse();
 
-Example: yg literally engage"
-    );
+    let phrase = cli.phrase.join("_");
+    let url = format!("https://youglish.com/pronounce/{}/english", phrase);
+    open::that(url).unwrap();
 }
