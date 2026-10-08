@@ -1,6 +1,5 @@
-use std::process;
-
 use clap::{Parser, ValueEnum};
+use std::process;
 
 #[derive(Parser)]
 #[command(arg_required_else_help = true)]
@@ -8,8 +7,19 @@ struct Cli {
     /// Word or phrase to pronounce
     phrase: Vec<String>,
 
+    /// Specify accent to pronounce
     #[arg(short, long)]
     accent: Option<Accent>,
+
+    // TODO: implement shorcut flags for accents (--us, --uk and --aus)
+    // #[arg(long)]
+    //  us: bool,
+    //
+    // #[arg(long)]
+    // uk: bool,
+    //
+    // #[arg(long)]
+    // aus: bool,
 }
 
 #[derive(Clone, ValueEnum)]
@@ -36,6 +46,9 @@ fn main() {
         None => "",
     };
 
-    let url = format!("https://youglish.com/pronounce/{}/english{}", phrase, accent_path);
+    let url = format!(
+        "https://youglish.com/pronounce/{}/english{}",
+        phrase, accent_path
+    );
     open::that(url).unwrap();
 }
