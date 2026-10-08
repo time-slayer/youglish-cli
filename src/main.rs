@@ -3,6 +3,7 @@ use std::process;
 use clap::Parser;
 
 #[derive(Parser)]
+#[command(arg_required_else_help = true)]
 struct Cli {
     /// Word or phrase to pronounce
     phrase: Vec<String>,
