@@ -13,7 +13,7 @@ fn main() {
     let phrase = cli.phrase.join("_");
 
     if phrase.trim().is_empty() {
-        eprintln!("You provided an empty phrase");
+        eprintln!("Please provide a non-empty phrase");
         eprintln!("Usage example: yg literally engage");
         process::exit(1);
     }
