@@ -11,7 +11,10 @@ struct Cli {
     #[arg(short, long)]
     accent: Option<Accent>,
 
-    // TODO: implement shorcut flags for accents (--us, --uk and --aus)
+    /// Print generated URL instead of opening in browser
+    #[arg(short, long)]
+    print: bool,
+    // TODO: implement shorthand flags for accents (--us, --uk and --aus)
     // #[arg(long)]
     //  us: bool,
     //
@@ -20,6 +23,8 @@ struct Cli {
     //
     // #[arg(long)]
     // aus: bool,
+
+    // TODO: add flag to split phrase into single-word queries
 }
 
 #[derive(Clone, ValueEnum)]
@@ -50,5 +55,10 @@ fn main() {
         "https://youglish.com/pronounce/{}/english{}",
         phrase, accent_path
     );
-    open::that(url).unwrap();
+
+    if cli.print {
+        println!("{url}");
+    } else {
+        open::that(url).unwrap();
+    }
 }
