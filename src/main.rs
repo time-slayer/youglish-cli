@@ -14,7 +14,7 @@ fn main() {
         process::exit(1);
     }
 
-    let accent = match cli.accent {
+    let accent = match cli.selected_accent() {
         Some(a) => a.as_path(),
         None => "",
     };
