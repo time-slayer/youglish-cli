@@ -6,7 +6,7 @@ A fast, convenient cli for quickly searching English word or phrase pronunciatio
 
 ## Usage
 
-Simply provide a word or phrase to instantly generate and open the YouGlish link in browser:
+Simply provide a word or phrase to instantly generate and open the YouGlish link in your browser:
 
 ```bash
 yg literally            # single word
