@@ -4,6 +4,7 @@ use clap::{Parser, ValueEnum};
 #[command(arg_required_else_help = true)]
 pub struct Cli {
     /// Word or phrase to pronounce
+    #[arg(required = true)]
     pub phrase: Vec<String>,
 
     /// Filter by a specific accent
