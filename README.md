@@ -4,6 +4,11 @@ A fast, convenient cli for quickly searching English word or phrase pronunciatio
 
 ## Installation
 
+```bash
+# to ~/.local/bin
+cargo install --git https://github.com/time-slayer/youglish-cli --root ~/.local
+```
+
 ## Usage
 
 Simply provide a word or phrase to instantly generate and open the YouGlish link in your browser:
