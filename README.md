@@ -11,17 +11,18 @@ cargo install --git https://github.com/time-slayer/youglish-cli --root ~/.local
 
 ## Usage
 
-Simply provide a word or phrase to instantly generate and open the YouGlish link in your browser:
+Simply provide a word or phrase to open it on YouGlish:
 
 ```bash
-yg literally            # single word
-yg a bottle of water    # phrase
+yg literally                # single word
+yg a bottle of water        # phrase
 ```
 
-Filter by accent with `--accent` (`-a`):
+Filter by accent:
 
 ```bash
 yg -a us literally
+yg a bottle of water -a uk  # can be specified anywhere
 ```
 
 or directly with the accent's own flag:
