@@ -1,7 +1,7 @@
 mod cli;
 
 use clap::Parser;
-use cli::Cli;
+use cli::{Accent, Cli};
 use std::error::Error;
 use std::process;
 
@@ -15,10 +15,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         process::exit(1);
     }
 
-    let accent = match cli.selected_accent() {
-        Some(a) => a.as_path(),
-        None => "",
-    };
+    let accent = cli.selected_accent().map(Accent::as_path).unwrap_or("");
 
     let url = format!("https://youglish.com/pronounce/{phrase}/english{accent}");
 
