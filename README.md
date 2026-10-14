@@ -4,8 +4,18 @@ A fast, convenient cli for quickly searching English word or phrase pronunciatio
 
 ## Installation
 
+### Linux
+
+Latest binary
+
 ```bash
-# to ~/.local/bin
+curl -sfo ~/.local/bin/yg https://github.com/time-slayer/youglish-cli/releases/latest/download/yg
+chmod +x ~/.local/bin/yg
+```
+
+With cargo
+
+```bash
 cargo install --git https://github.com/time-slayer/youglish-cli --root ~/.local
 ```
 
