@@ -2,9 +2,10 @@ mod cli;
 
 use clap::Parser;
 use cli::Cli;
+use std::error::Error;
 use std::process;
 
-fn main() {
+fn main() -> Result<(), Box<dyn Error>> {
     let cli = Cli::parse();
     let phrase = cli.phrase.join("_");
 
@@ -24,6 +25,8 @@ fn main() {
     if cli.print {
         println!("{url}");
     } else {
-        open::that(url).unwrap();
+        open::that(url)?;
     }
+
+    Ok(())
 }
