@@ -11,15 +11,15 @@ pub struct Cli {
     #[arg(short, long, group = "accent_filter")]
     accent: Option<Accent>,
 
-    /// Shorthand for '--accent us'
+    /// Shorthand for --accent us
     #[arg(long, group = "accent_filter")]
     us: bool,
 
-    /// Shorthand for '--accent uk'
+    /// Shorthand for --accent uk
     #[arg(long, group = "accent_filter")]
     uk: bool,
 
-    /// Shorthand for '--accent aus'
+    /// Shorthand for --accent aus
     #[arg(long, group = "accent_filter")]
     aus: bool,
 
