@@ -15,15 +15,22 @@ fn main() -> Result<(), Box<dyn Error>> {
         process::exit(1);
     }
 
-    let phrase = cli.phrase.join("_");
+    let queries: Vec<String> = if cli.split {
+        cli.phrase.clone()
+    } else {
+        vec![cli.phrase.join("_")]
+    };
+
     let accent = cli.selected_accent().map(Accent::as_path).unwrap_or("");
 
-    let url = format!("https://youglish.com/pronounce/{phrase}/english{accent}");
+    for query in queries {
+        let url = format!("https://youglish.com/pronounce/{query}/english{accent}");
 
-    if cli.print {
-        println!("{url}");
-    } else {
-        open::that(url)?;
+        if cli.print {
+            println!("{url}");
+        } else {
+            open::that(url)?;
+        }
     }
 
     Ok(())

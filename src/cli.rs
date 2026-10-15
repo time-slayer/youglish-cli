@@ -27,7 +27,6 @@ pub struct Cli {
     #[arg(short, long)]
     pub print: bool,
 
-    // TODO: add flag to split phrase into single-word queries
     /// Split phrase into single-word queries
     #[arg(short, long)]
     pub split: bool,
