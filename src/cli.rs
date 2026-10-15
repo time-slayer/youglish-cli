@@ -26,7 +26,11 @@ pub struct Cli {
     /// Print generated URL instead of opening in browser
     #[arg(short, long)]
     pub print: bool,
+
     // TODO: add flag to split phrase into single-word queries
+    /// Split phrase into single-word queries
+    #[arg(short, long)]
+    pub split: bool,
 }
 
 impl Cli {

@@ -7,14 +7,15 @@ use std::process;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let cli = Cli::parse();
-    let phrase = cli.phrase.join("_");
 
-    if phrase.trim().is_empty() {
+    // Check if all words in phrase are empty strings
+    if cli.phrase.join("").trim().is_empty() {
         eprintln!("Please provide a non-empty phrase");
         eprintln!("Usage example: yg literally engage");
         process::exit(1);
     }
 
+    let phrase = cli.phrase.join("_");
     let accent = cli.selected_accent().map(Accent::as_path).unwrap_or("");
 
     let url = format!("https://youglish.com/pronounce/{phrase}/english{accent}");
