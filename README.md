@@ -40,3 +40,9 @@ or directly with the accent's own flag:
 ```bash
 yg --us literally
 ```
+
+Split phrase into single words:
+
+```bash
+yg -s literally engage      # Opens 2 separate YouGlish tabs
+```
