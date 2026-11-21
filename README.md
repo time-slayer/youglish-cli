@@ -35,14 +35,14 @@ yg -a us literally
 yg a bottle of water -a uk  # can be specified anywhere
 ```
 
-or directly with the accent's own flag:
+Or use a shorthand flag:
 
 ```bash
 yg --us literally
 ```
 
-Split phrase into single words:
+Split a phrase into individual words:
 
 ```bash
-yg -s literally engage      # Opens 2 separate YouGlish tabs
+yg -s literally engage      # opens 2 separate YouGlish tabs
 ```
