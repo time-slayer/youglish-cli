@@ -4,19 +4,19 @@ A fast, convenient cli for quickly searching English word or phrase pronunciatio
 
 ## Installation
 
-### Linux
-
-Prebuilt binary:
+Prebuilt binary (Linux x86_64):
 
 ```bash
 curl -sSfLo ~/.local/bin/yg https://github.com/time-slayer/youglish-cli/releases/latest/download/yg
 chmod +x ~/.local/bin/yg
 ```
 
+Make sure `~/.local/bin` is in `PATH`.
+
 With cargo:
 
 ```bash
-cargo install --git https://github.com/time-slayer/youglish-cli --root ~/.local
+cargo install --git https://github.com/time-slayer/youglish-cli
 ```
 
 ## Usage
