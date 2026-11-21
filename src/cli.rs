@@ -1,4 +1,5 @@
 use clap::{Parser, ValueEnum};
+use std::env;
 
 #[derive(Parser)]
 #[command(arg_required_else_help = true)]
@@ -38,7 +39,7 @@ impl Cli {
             Self { us: true, .. } => Some(Accent::Us),
             Self { uk: true, .. } => Some(Accent::Uk),
             Self { aus: true, .. } => Some(Accent::Aus),
-            _ => self.accent,
+            _ => self.accent.or_else(Accent::from_env),
         }
     }
 }
@@ -57,5 +58,10 @@ impl Accent {
             Self::Uk => "/uk",
             Self::Aus => "/aus",
         }
+    }
+
+    fn from_env() -> Option<Self> {
+        let accent = env::var("YG_ACCENT").ok()?;
+        Self::from_str(accent.trim(), true).ok()
     }
 }
